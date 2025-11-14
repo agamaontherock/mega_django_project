@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login
 from django.urls import reverse
 from .forms import UserRegisterForm
-
+import time
 # Create your views here.
 from .models import Book
 
@@ -35,6 +35,10 @@ class BookUpdateView(generic.UpdateView):
 #                   "bookstore_app/book_list.html", 
 #                   {"book_list": Book.objects.all(),
 #                    "book_list_page_title" : "Here is list of available books:"})
+
+def infinitive(request):
+    while(True):
+        time.sleep(1)
 
 def register(request):
     if (request.method == "POST"):
